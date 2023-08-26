@@ -1,14 +1,19 @@
 <template>
     <main class="main-age_card">
-        Hello there signore
-        <section>
-            <form method="" id="" action="">
-                <label>day</label>
-                <input type="text" name="" value="" />
-                <label>month</label>
-                <input type="text" name="" value="" />
-                <label>year</label>
-                <input type="text" name="" value="" />
+        <section class="form">
+            <form class="form__container" method="" id="" action="">
+                <div class="form__group">
+                    <label class="form__label">day</label>
+                    <input class="form__input" type="text" name="" value="" />
+                </div>
+                <div class="form__group">
+                    <label class="form__label">month</label>
+                    <input class="form__input" type="text" name="" value="" />
+                </div>
+                <div class="form__group">
+                    <label class="form__label">year</label>
+                    <input class="form__input" type="text" name="" value="" />
+                </div>
             </form>
         </section>
         <section>
@@ -16,16 +21,16 @@
         </section>
         <section>
             <section class="age__item">
-              <p class="age__number">38</p>
-              <p class="age__unit">years</p>
+                <p class="age__number">38</p>
+                <p class="age__unit">years</p>
             </section>
             <section class="age__item">
-            <p class="age__number">3</p>
-            <p class="age__unit">months</p>
+                <p class="age__number">3</p>
+                <p class="age__unit">months</p>
             </section>
             <section class="age__item">
-            <p class="age__number">26</p>
-            <p class="age__unit">days</p>
+                <p class="age__number">26</p>
+                <p class="age__unit">days</p>
             </section>
         </section>
     </main>
@@ -40,7 +45,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
     margin: 40px 0 0;
@@ -60,30 +64,44 @@ a {
     color: #42b983;
 }
 
- .main-age_card {
-   background-color: white;
-   border-radius: 24px 24px 100px 24px;
+.main-age_card {
+    background-color: white;
+    border-radius: 24px 24px 100px 24px;
+}
+
+.age {}
+
+.age__item {
+    font-family: Poppins;
+    font-size: 56px;
+    font-style: italic;
+    font-weight: 800;
+    line-height: 110%;
+    /* 61.6px */
+    letter-spacing: -1.12px;
+    display: flex;
+    gap: 8px;
+}
+
+.age__number {
+    color: #854DFF;
+}
+
+.age__unit {
+    color: black
+}
+
+.form {
+     display: flex;
  }
 
- .age {
+ .form__container {
+     display: flex
  }
 
- .age__item {
-font-family: Poppins;
-   font-size: 56px;
-   font-style: italic;
-   font-weight: 800;
-   line-height: 110%; /* 61.6px */
-   letter-spacing: -1.12px;
-   display: flex;
-   gap: 8px;
- }
-
- .age__number{
-   color: #854DFF;
- }
- .age__unit {
-   color: black
+ .form__group {
+     display: flex;
+     flex-direction: column;
  }
 
 </style>
