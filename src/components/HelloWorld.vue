@@ -19,7 +19,7 @@
         <section>
             icon goes here
         </section>
-        <section>
+        <section class="age">
             <section class="age__item">
                 <p class="age__number">38</p>
                 <p class="age__unit">years</p>
@@ -69,7 +69,11 @@ a {
     border-radius: 24px 24px 100px 24px;
 }
 
-.age {}
+.age {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ }
 
 .age__item {
     font-family: Poppins;
