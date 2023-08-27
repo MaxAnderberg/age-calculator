@@ -67,6 +67,7 @@ a {
 .main-age_card {
     background-color: white;
     border-radius: 24px 24px 100px 24px;
+    padding: 48px 24px;
 }
 
 .age {
