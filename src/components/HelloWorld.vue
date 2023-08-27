@@ -106,6 +106,12 @@ a {
  .form__group {
      display: flex;
      flex-direction: column;
+}
+ .form__label {
+     font-size: 12px;
+     text-transform: uppercase;
+     letter-spacing: 3px;
+     font-weight: 700;
  }
 
 </style>
