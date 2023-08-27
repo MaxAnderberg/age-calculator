@@ -85,7 +85,6 @@ a {
     font-style: italic;
     font-weight: 800;
     line-height: 110%;
-    /* 61.6px */
     letter-spacing: -1.12px;
     display: flex;
     gap: 8px;
