@@ -4,15 +4,15 @@
             <form class="form__container" method="" id="" action="">
                 <div class="form__group">
                     <label class="form__label">day</label>
-                    <input class="form__input" type="text" name="" value="" />
+                    <input class="form__input" type="text" name="" value="" placeholder="24" />
                 </div>
                 <div class="form__group">
                     <label class="form__label">month</label>
-                    <input class="form__input" type="text" name="" value="" />
+                    <input class="form__input" type="text" name="" value="" placeholder="09" />
                 </div>
                 <div class="form__group">
                     <label class="form__label">year</label>
-                    <input class="form__input" type="text" name="" value="" />
+                    <input class="form__input" type="text" name="" value="" placeholder="1984" />
                 </div>
             </form>
         </section>
@@ -47,6 +47,7 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Montserrat:wght@500;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 h3 {
     margin: 40px 0 0;
 }
@@ -75,7 +76,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
- }
+}
 
 .age__item {
     font-family: Poppins;
@@ -98,22 +99,36 @@ a {
 }
 
 .form {
-     display: flex;
- }
-
- .form__container {
-     display: flex
- }
-
- .form__group {
-     display: flex;
-     flex-direction: column;
+    display: flex;
 }
- .form__label {
-     font-size: 12px;
-     text-transform: uppercase;
-     letter-spacing: 3px;
-     font-weight: 700;
- }
 
+.form__container {
+    display: flex;
+    gap: 16px;
+    width: 295px;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.form__input {
+    padding: 12px 16px;
+    border-radius: 8px;
+    width: 80px;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.2px;
+}
 </style>
