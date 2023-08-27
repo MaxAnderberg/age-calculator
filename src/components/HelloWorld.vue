@@ -100,12 +100,14 @@ a {
 
 .form {
     display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
 .form__container {
     display: flex;
+    justify-content: center;
     gap: 16px;
-    width: 295px;
 }
 
 .form__group {
@@ -118,17 +120,18 @@ a {
     text-transform: uppercase;
     letter-spacing: 3px;
     font-weight: 700;
+    text-align: left;
 }
 
 .form__input {
-    padding: 12px 16px;
+    /* padding: 12px 16px; */
     border-radius: 8px;
-    width: 80px;
     font-family: Poppins;
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     letter-spacing: 0.2px;
+    width: 100%;
 }
 </style>
