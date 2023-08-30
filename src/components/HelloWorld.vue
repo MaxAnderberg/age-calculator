@@ -14,8 +14,8 @@
                 </div>
                 <div class="form__group">
                     <label class="form__label">year</label>
-                        <input v-model="birthdate.year" :class="{ 'form__input--error': birthdateError.year }"
-                            @input="calculateAge" class="form__input" type="number" name="" placeholder="1984" />
+                    <input v-model="birthdate.year" :class="{ 'form__input--error': birthdateError.year }"
+                        @input="calculateAge" class="form__input" type="number" name="" placeholder="1984" />
                 </div>
             </form>
         </section>
@@ -116,7 +116,7 @@ export default {
             if (newYear > this.currentYear) {
                 this.birthdate.year = this.currentYear
             }
-    }
+        }
     }
 }
 
