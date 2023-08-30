@@ -65,7 +65,6 @@ export default {
     components: { ArrowIcon },
     methods: {
         calculateAge() {
-
             if (this.birthdate && this.birthdate.year && this.birthdate.month && this.birthdate.day) {
                 const currentYear = new Date().getFullYear();
                 const currentMonth = new Date().getMonth() + 1; // JavaScript months start from 0
@@ -89,11 +88,30 @@ export default {
                 this.age.month = ageMonth;
                 this.age.day = ageDay;
             } else {
-                this.age = { year: 0, month: 0, day: 0 };
+                this.age = { year: '--', month: '--', day: '--' };
+            }
+        },
+        computed: {
+            birthdateError() {
+                const errors = {};
+                const { day, month, year } = this.birthdate;
+                if (day && month && year) {
+                    const maxDay = new Date(year, month, 0).getDate();
+                    if (day < 1 || day > maxDay) {
+                        errors.day = 'Invalid day for the selected month/year';
+                    }
+                    const birthdate = new Date(year, month - 1, day);
+                    const today = new Date();
+                    if (birthdate > today) {
+                        errors.future = 'Birthdate cannot be in the future';
+                    }
+                }
+                return errors;
             }
         }
     },
 }
+
 </script>
 
 <style scoped>
