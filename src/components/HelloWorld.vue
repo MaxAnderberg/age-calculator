@@ -14,8 +14,8 @@
                 </div>
                 <div class="form__group">
                     <label class="form__label">year</label>
-                    <input v-model="birthdate.year" :class="{ 'form__input--error': birthdateError.year }"
-                        @input="calculateAge" class="form__input" type="number" name="" placeholder="1984" />
+                        <input v-model="birthdate.year" :class="{ 'form__input--error': birthdateError.year }"
+                            @input="calculateAge" class="form__input" type="number" name="" placeholder="1984" />
                 </div>
             </form>
         </section>
@@ -59,7 +59,8 @@ export default {
                 day: 1,
                 month: 1,
                 year: 32,
-            }
+            },
+            currentYear: new Date().getFullYear(),
         };
     },
     components: { ArrowIcon },
@@ -94,7 +95,6 @@ export default {
     },
     computed: {
         birthdateError() {
-            console.log('hello there', this.birthdate)
             const errors = {};
             const { day, month, year } = this.birthdate;
             if (day && month && year) {
@@ -110,6 +110,13 @@ export default {
             }
             return errors;
         }
+    },
+    watch: {
+        'birthdate.year'(newYear) {
+            if (newYear > this.currentYear) {
+                this.birthdate.year = this.currentYear
+            }
+    }
     }
 }
 
