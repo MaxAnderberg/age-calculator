@@ -4,32 +4,36 @@
             <form class="form__container" method="" id="" action="">
                 <div class="form__group">
                     <label class="form__label">day</label>
-                    <input class="form__input" type="text" name="" value="" placeholder="24" />
+                    <input class="form__input" type="number" name="" v-model="birthdate.day" @input="calculateAge"
+                        placeholder="24" />
                 </div>
                 <div class="form__group">
                     <label class="form__label">month</label>
-                    <input class="form__input" type="text" name="" value="" placeholder="09" />
+                    <input class="form__input" type="number" name="" v-model="birthdate.month" @input="calculateAge"
+                        placeholder="09" />
                 </div>
                 <div class="form__group">
                     <label class="form__label">year</label>
-                    <input class="form__input" type="text" name="" value="" placeholder="1984" />
+                    <input v-model="birthdate.year" @input="calculateAge" class="form__input" type="number" name=""
+                        placeholder="1984" />
                 </div>
             </form>
         </section>
         <section>
-            icon goes here
+            <ArrowIcon />
+            <img alt="Vue logo" class="logo" src="@/assets/logo.png" width="64" height="64" />
         </section>
         <section class="age">
             <section class="age__item">
-                <p class="age__number">38</p>
+                <p class="age__number">{{ age.year }}</p>
                 <p class="age__unit">years</p>
             </section>
             <section class="age__item">
-                <p class="age__number">3</p>
+                <p class="age__number">{{ age.month }}</p>
                 <p class="age__unit">months</p>
             </section>
             <section class="age__item">
-                <p class="age__number">26</p>
+                <p class="age__number">{{ age.day }}</p>
                 <p class="age__unit">days</p>
             </section>
         </section>
@@ -37,11 +41,58 @@
 </template>
 
 <script>
+import ArrowIcon from './ArrowIcon.vue';
+
 export default {
     name: 'HelloWorld',
     props: {
         msg: String
-    }
+    },
+    data() {
+        return {
+            birthdate: {
+                day: 1,
+                month: 11,
+                year: 1985,
+            },
+            age: {
+                day: 1,
+                month: 1,
+                year: 32,
+            }
+        };
+    },
+    components: { ArrowIcon },
+    methods: {
+        calculateAge() {
+
+            if (this.birthdate && this.birthdate.year && this.birthdate.month && this.birthdate.day) {
+                const currentYear = new Date().getFullYear();
+                const currentMonth = new Date().getMonth() + 1; // JavaScript months start from 0
+                const currentDay = new Date().getDate();
+                let ageYear = currentYear - parseInt(this.birthdate.year);
+                let ageMonth = currentMonth - parseInt(this.birthdate.month);
+                let ageDay = currentDay - parseInt(this.birthdate.day);
+
+                if (ageDay < 0) {
+                    ageMonth--;
+                    const daysInLastMonth = new Date(currentYear, currentMonth - 1, 0).getDate();
+                    ageDay += daysInLastMonth;
+                }
+
+                if (ageMonth < 0) {
+                    ageYear--;
+                    ageMonth += 12;
+                }
+
+                this.age.year = ageYear;
+                this.age.month = ageMonth;
+                this.age.day = ageDay;
+            } else {
+                this.age = { year: 0, month: 0, day: 0 };
+            }
+        }
+    },
 }
 </script>
 
@@ -124,7 +175,6 @@ a {
 }
 
 .form__input {
-    /* padding: 12px 16px; */
     border-radius: 8px;
     font-family: Poppins;
     font-size: 20px;
