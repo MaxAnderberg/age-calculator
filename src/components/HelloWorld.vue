@@ -209,6 +209,7 @@ a {
     line-height: normal;
     letter-spacing: 0.2px;
     width: 100%;
+    padding: 16px;
 }
 
 .form__input--error {
