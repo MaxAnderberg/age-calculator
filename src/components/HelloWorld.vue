@@ -179,6 +179,7 @@ a {
     display: flex;
     width: 100%;
     justify-content: center;
+    margin-bottom: 32px;
 }
 
 .form__container {
