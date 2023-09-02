@@ -169,10 +169,12 @@ a {
 
 .age__number {
     color: #854DFF;
+    margin: 0;
 }
 
 .age__unit {
-    color: black
+    color: black;
+    margin: 0;
 }
 
 .form {
