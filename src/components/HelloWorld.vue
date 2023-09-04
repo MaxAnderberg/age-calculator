@@ -148,6 +148,7 @@ a {
     border-radius: 24px 24px 100px 24px;
     padding: 48px 24px;
     overflow: hidden;
+    margin-top: 88px;
 }
 
 .age {
