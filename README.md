@@ -1,8 +1,5 @@
 # Password generator app
 
-
-
-
 ## Table of contents
 
 - [Overview](#overview)
