@@ -1,24 +1,45 @@
-# age-calculator
+# Password generator app
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Table of contents
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [Built with](#built-with)
+- [Local Development](#local-development)
+- [Author](#author)
+
+## Overview
+
+### The challenge
+
+
+### Screenshot
+
+### Links
+
+- [Github](https://github.com/MaxAnderberg/age-calculator)
+- [Deployed password generator](TBA)
+
+## Built with
+
+- Flexbox
+- Mobile-first workflow
+
+## Local Development
+
+To set up the project locally, follow these steps:
+
+1. Clone the project: `git clone https://github.com/MaxAnderberg/password-generator`
+2. Navigate into the project directory: `cd password-generator`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm run dev`
+
+## Author
+- Website - [Max Anderberg](https://maxanderberg.se)
+
+
