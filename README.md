@@ -26,6 +26,7 @@
 
 - Flexbox
 - Mobile-first workflow
+- Vue
 
 ## Local Development
 
