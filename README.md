@@ -1,4 +1,6 @@
-# Password generator app
+# Age calculator app
+TODO: Add description
+
 
 ## Table of contents
 
@@ -31,6 +33,7 @@
 ## Local Development
 
 To set up the project locally, follow these steps:
+
 
 1. Clone the project: `git clone https://github.com/MaxAnderberg/age-calculator`
 2. Navigate into the project directory: `cd age-calculator`
