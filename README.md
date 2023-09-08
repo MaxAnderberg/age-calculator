@@ -1,5 +1,5 @@
 # Age calculator app
-TODO: Add description
+TODO: Add description.
 
 
 ## Table of contents
