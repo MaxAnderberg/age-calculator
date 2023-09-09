@@ -42,142 +42,142 @@
 </template>
 
 <script>
-import ArrowIcon from './ArrowIcon.vue';
+ import ArrowIcon from './ArrowIcon.vue';
 
-export default {
-    name: 'HelloWorld',
-    props: {
-        msg: String
-    },
-    data() {
-        return {
-            birthdate: {
-                day: 1,
-                month: 11,
-                year: 1985,
-            },
-            age: {
-                day: 1,
-                month: 1,
-                year: 32,
-            },
-            currentYear: new Date().getFullYear(),
-        };
-    },
-    components: { ArrowIcon },
-    methods: {
-        calculateAge() {
-            if (this.birthdate && this.birthdate.year && this.birthdate.month && this.birthdate.day) {
-                const currentYear = new Date().getFullYear();
-                const currentMonth = new Date().getMonth() + 1; // JavaScript months start from 0
-                const currentDay = new Date().getDate();
-                let ageYear = currentYear - parseInt(this.birthdate.year);
-                let ageMonth = currentMonth - parseInt(this.birthdate.month);
-                let ageDay = currentDay - parseInt(this.birthdate.day);
+ export default {
+     name: 'HelloWorld',
+     props: {
+         msg: String
+     },
+     data() {
+         return {
+             birthdate: {
+                 day: 1,
+                 month: 11,
+                 year: 1985,
+             },
+             age: {
+                 day: 1,
+                 month: 1,
+                 year: 32,
+             },
+             currentYear: new Date().getFullYear(),
+         };
+     },
+     components: { ArrowIcon },
+     methods: {
+         calculateAge() {
+             if (this.birthdate && this.birthdate.year && this.birthdate.month && this.birthdate.day) {
+                 const currentYear = new Date().getFullYear();
+                 const currentMonth = new Date().getMonth() + 1; // JavaScript months start from 0
+                 const currentDay = new Date().getDate();
+                 let ageYear = currentYear - parseInt(this.birthdate.year);
+                 let ageMonth = currentMonth - parseInt(this.birthdate.month);
+                 let ageDay = currentDay - parseInt(this.birthdate.day);
 
-                if (ageDay < 0) {
-                    ageMonth--;
-                    const daysInLastMonth = new Date(currentYear, currentMonth - 1, 0).getDate();
-                    ageDay += daysInLastMonth;
-                }
+                 if (ageDay < 0) {
+                     ageMonth--;
+                     const daysInLastMonth = new Date(currentYear, currentMonth - 1, 0).getDate();
+                     ageDay += daysInLastMonth;
+                 }
 
-                if (ageMonth < 0) {
-                    ageYear--;
-                    ageMonth += 12;
-                }
+                 if (ageMonth < 0) {
+                     ageYear--;
+                     ageMonth += 12;
+                 }
 
-                this.age.year = ageYear;
-                this.age.month = ageMonth;
-                this.age.day = ageDay;
-            } else {
-                this.age = { year: '--', month: '--', day: '--' };
-            }
-        },
-    },
-    computed: {
-        birthdateError() {
-            const errors = {};
-            const { day, month, year } = this.birthdate;
-            if (day && month && year) {
-                const maxDay = new Date(year, month, 0).getDate();
-                if (day < 1 || day > maxDay) {
-                    errors.day = 'Invalid day for the selected month/year';
-                }
-                const birthdate = new Date(year, month - 1, day);
-                const today = new Date();
-                if (birthdate > today) {
-                    errors.future = 'Birthdate cannot be in the future';
-                }
-            }
-            return errors;
-        }
-    },
-    watch: {
-        'birthdate.year'(newYear) {
-            if (newYear > this.currentYear) {
-                this.birthdate.year = this.currentYear
-            }
-        }
-    }
-}
+                 this.age.year = ageYear;
+                 this.age.month = ageMonth;
+                 this.age.day = ageDay;
+             } else {
+                 this.age = { year: '--', month: '--', day: '--' };
+             }
+         },
+     },
+     computed: {
+         birthdateError() {
+             const errors = {};
+             const { day, month, year } = this.birthdate;
+             if (day && month && year) {
+                 const maxDay = new Date(year, month, 0).getDate();
+                 if (day < 1 || day > maxDay) {
+                     errors.day = 'Invalid day for the selected month/year';
+                 }
+                 const birthdate = new Date(year, month - 1, day);
+                 const today = new Date();
+                 if (birthdate > today) {
+                     errors.future = 'Birthdate cannot be in the future';
+                 }
+             }
+             return errors;
+         }
+     },
+     watch: {
+         'birthdate.year'(newYear) {
+             if (newYear > this.currentYear) {
+                 this.birthdate.year = this.currentYear
+             }
+         }
+     }
+ }
 
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Montserrat:wght@500;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Montserrat:wght@500;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.main-age_card {
-    background-color: white;
-    border-radius: 24px 24px 100px 24px;
-    padding: 48px 24px;
-    overflow: hidden;
-    margin-top: 88px;
-}
+ .main-age_card {
+     background-color: white;
+     border-radius: 24px 24px 100px 24px;
+     padding: 48px 24px;
+     overflow: hidden;
+     margin-top: 88px;
+ }
 
-.age {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+ .age {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+ }
 
-.age__item {
-    font-family: Poppins;
-    font-size: 56px;
-    font-style: italic;
-    font-weight: 800;
-    line-height: 110%;
-    letter-spacing: -1.12px;
-    display: flex;
-    gap: 8px;
-}
+ .age__item {
+     font-family: Poppins;
+     font-size: 56px;
+     font-style: italic;
+     font-weight: 800;
+     line-height: 110%;
+     letter-spacing: -1.12px;
+     display: flex;
+     gap: 8px;
+ }
 
-.age__number {
-    color: #854DFF;
-    margin: 0;
-}
+ .age__number {
+     color: #854DFF;
+     margin: 0;
+ }
 
-.age__unit {
-    color: black;
-    margin: 0;
-}
+ .age__unit {
+     color: black;
+     margin: 0;
+ }
 
-.form {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 32px;
-}
+ .form {
+     display: flex;
+     width: 100%;
+     justify-content: center;
+     margin-bottom: 32px;
+ }
 
-.form__container {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-}
+ .form__container {
+     display: flex;
+     justify-content: center;
+     gap: 16px;
+ }
 
-.form__group {
-    display: flex;
-    flex-direction: column;
-}
+ .form__group {
+     display: flex;
+     flex-direction: column;
+ }
 
  .form__label {
      font-size: 12px;
@@ -189,19 +189,31 @@ export default {
      font-family: poppins;
  }
 
-.form__input {
-    border-radius: 8px;
-    font-family: Poppins;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 0.2px;
-    width: 100%;
-    padding: 16px;
-}
+ .form__input {
+     border-radius: 8px;
+     font-family: Poppins;
+     font-size: 20px;
+     font-style: normal;
+     font-weight: 700;
+     line-height: normal;
+     letter-spacing: 0.2px;
+     width: 100%;
+     padding: 16px;
+ }
 
-.form__input--error {
-    border-color: red;
+ .form__input:hover {
+     border-color: #854DFF;
+     cursor: pointer;
+ }
+
+ .form__input--error {
+     border-color: red;
+ }
+
+ /* Styles for tablets and up */
+ @media (min-width: 768px) {
+     .form__label {
+         font-size: 14px;
+     }
 }
 </style>
