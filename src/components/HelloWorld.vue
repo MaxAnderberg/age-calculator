@@ -41,9 +41,10 @@
       </form>
     </section>
     <section>
-      <ArrowIcon />
-      <hr />
-      <img alt="Vue logo" class="logo" src="@/assets/logo.png" width="64" height="64" />
+      <div class="test-container">
+          <hr class="custom-line" />
+          <img alt="Vue logo" class="logo" src="@/assets/logo.png" width="64" height="64" />
+      </div>
     </section>
     <section class="age">
       <section class="age__item">
@@ -63,7 +64,6 @@
 </template>
 
 <script>
-import ArrowIcon from "./ArrowIcon.vue";
 
 export default {
   name: "HelloWorld",
@@ -85,7 +85,6 @@ export default {
       currentYear: new Date().getFullYear(),
     };
   },
-  components: { ArrowIcon },
   methods: {
     calculateAge() {
       if (
@@ -239,6 +238,27 @@ export default {
 .form__input--error {
   border-color: red;
 }
+
+ .test-container {
+     position: relative;
+     height: 20px; /* Adjust depending on your icon's height */
+
+ }
+
+ .custom-line {
+     position: relative;
+     z-index: 1;
+ }
+
+ .icon {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%); /* Centering the icon */
+     z-index: 2;
+     height: 20px; /* You can adjust this based on your actual icon's size */
+     width: auto;
+ }
 
 /* Styles for tablets and up */
 @media (min-width: 768px) {
