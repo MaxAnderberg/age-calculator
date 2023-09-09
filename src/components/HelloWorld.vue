@@ -199,6 +199,7 @@
      letter-spacing: 0.2px;
      width: 100%;
      padding: 16px;
+     border-color: #DCDCDC;
  }
 
  .form__input:hover {
@@ -215,5 +216,11 @@
      .form__label {
          font-size: 14px;
      }
-}
+     .form {
+         justify-content: flex-start;
+     }
+     .form__input{
+         max-width: 160px;
+     }
+ }
 </style>
