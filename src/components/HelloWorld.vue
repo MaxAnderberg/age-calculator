@@ -21,6 +21,7 @@
         </section>
         <section>
             <ArrowIcon />
+            <hr>
             <img alt="Vue logo" class="logo" src="@/assets/logo.png" width="64" height="64" />
         </section>
         <section class="age">
