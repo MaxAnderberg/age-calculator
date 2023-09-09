@@ -179,13 +179,15 @@ export default {
     flex-direction: column;
 }
 
-.form__label {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 700;
-    text-align: left;
-}
+ .form__label {
+     font-size: 12px;
+     text-transform: uppercase;
+     letter-spacing: 3px;
+     font-weight: 700;
+     text-align: left;
+     color: #716F6F;
+     font-family: poppins;
+ }
 
 .form__input {
     border-radius: 8px;
