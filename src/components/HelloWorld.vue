@@ -225,5 +225,11 @@
      .main-age_card {
          padding: 56px;
      }
+     .age__number {
+         font-size: 104px;
+     }
+     .age__unit {
+         font-size: 104px;
+     }
  }
 </style>
