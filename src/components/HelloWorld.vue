@@ -219,8 +219,11 @@
      .form {
          justify-content: flex-start;
      }
-     .form__input{
+     .form__input {
          max-width: 160px;
+     }
+     .main-age_card {
+         padding: 56px;
      }
  }
 </style>
