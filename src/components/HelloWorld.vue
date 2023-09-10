@@ -101,6 +101,7 @@ export default {
         let ageDay = currentDay - parseInt(this.birthdate.day);
 
         if (ageDay < 0) {
+            // @TODO: reset day to last day of the previous month. If possible
           ageMonth--;
           const daysInLastMonth = new Date(
             currentYear,
@@ -111,6 +112,7 @@ export default {
         }
 
         if (ageMonth < 0) {
+            // @TODO: Months needs to behave properly - make it so it's not possible to go above 12 or under 1
           ageYear--;
           ageMonth += 12;
         }
