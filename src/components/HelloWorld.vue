@@ -264,7 +264,6 @@ export default {
   width: auto;
 }
 
-/* Styles for tablets and up */
 @media (min-width: 768px) {
   .form__label {
     font-size: 14px;
