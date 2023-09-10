@@ -243,22 +243,25 @@ export default {
 
  .test-container {
      position: relative;
-     height: 20px; /* Adjust depending on your icon's height */
-
+     height: 64px; /* Match the logo's height */
+     overflow: hidden; /* In case any child elements exceed the container's bounds */
  }
 
  .custom-line {
      position: relative;
      z-index: 1;
+     margin: 32px 0; /* This centers the line within the 64px container */
+     border: none; /* Remove the default border */
+     border-top: 1px solid black; /* Set a single top border to emulate the HR */
  }
 
- .icon {
+ .logo {
      position: absolute;
      top: 50%;
      left: 50%;
-     transform: translate(-50%, -50%); /* Centering the icon */
+     transform: translate(-50%, -50%);
      z-index: 2;
-     height: 20px; /* You can adjust this based on your actual icon's size */
+     height: 64px;
      width: auto;
  }
 
@@ -282,5 +285,8 @@ export default {
   .age__unit {
     font-size: 104px;
   }
+.logo {
+    left: 97%;
+ }
 }
 </style>
