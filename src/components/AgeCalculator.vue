@@ -41,9 +41,11 @@
       </form>
     </section>
     <section>
-      <div class="test-container">
+        <div class="test-container">
         <hr class="custom-line" />
-        <img alt="Vue logo" class="logo" src="@/assets/logo.png" width="64" height="64" />
+        <div class="circle">
+            <img alt="Vue logo" class="logo" src="@/assets/icon-arrow.svg" width="64" height="64" />
+        </div>
       </div>
     </section>
     <section class="age">
@@ -64,92 +66,96 @@
 </template>
 
 <script>
-export default {
-  name: "HelloWorld",
-  props: {
-    msg: String,
-  },
-  data() {
-    return {
-      birthdate: {
-        day: 1,
-        month: 11,
-        year: 1985,
-      },
-      age: {
-        day: 1,
-        month: 1,
-        year: 32,
-      },
-      currentYear: new Date().getFullYear(),
-    };
-  },
-  methods: {
-    calculateAge() {
-      if (
-        this.birthdate &&
-        this.birthdate.year &&
-        this.birthdate.month &&
-        this.birthdate.day
-      ) {
-        const currentYear = new Date().getFullYear();
-        const currentMonth = new Date().getMonth() + 1;
-        const currentDay = new Date().getDate();
-        let ageYear = currentYear - parseInt(this.birthdate.year);
-        let ageMonth = currentMonth - parseInt(this.birthdate.month);
-        let ageDay = currentDay - parseInt(this.birthdate.day);
 
-        if (ageDay < 0) {
-          // @TODO: reset day to last day of the previous month. If possible
-          ageMonth--;
-          const daysInLastMonth = new Date(
-            currentYear,
-            currentMonth - 1,
-            0
-          ).getDate();
-          ageDay += daysInLastMonth;
-        }
 
-        if (ageMonth < 0) {
-          // @TODO: Months needs to behave properly - make it so it's not possible to go above 12 or under 1
-          ageYear--;
-          ageMonth += 12;
-        }
 
-        this.age.year = ageYear;
-        this.age.month = ageMonth;
-        this.age.day = ageDay;
-      } else {
-        this.age = { year: "--", month: "--", day: "--" };
-      }
-    },
-  },
-  computed: {
-    birthdateError() {
-      const errors = {};
-      const { day, month, year } = this.birthdate;
-      if (day && month && year) {
-        const maxDay = new Date(year, month, 0).getDate();
-        if (day < 1 || day > maxDay) {
-          errors.day = "Invalid day for the selected month/year";
-        }
-        const birthdate = new Date(year, month - 1, day);
-        const today = new Date();
-        if (birthdate > today) {
-          errors.future = "Birthdate cannot be in the future";
-        }
-      }
-      return errors;
-    },
-  },
-  watch: {
-    "birthdate.year"(newYear) {
-      if (newYear > this.currentYear) {
-        this.birthdate.year = this.currentYear;
-      }
-    },
-  },
-};
+ export default {
+     name: "AgeCalculator",
+     props: {
+         msg: String,
+     },
+     data() {
+         return {
+             logoSrc: require("@/assets/icon-arrow.svg"),
+             birthdate: {
+                 day: 1,
+                 month: 11,
+                 year: 1985,
+             },
+             age: {
+                 day: 1,
+                 month: 1,
+                 year: 32,
+             },
+             currentYear: new Date().getFullYear(),
+         };
+     },
+     methods: {
+         calculateAge() {
+             if (
+                 this.birthdate &&
+                 this.birthdate.year &&
+                 this.birthdate.month &&
+                 this.birthdate.day
+             ) {
+                 const currentYear = new Date().getFullYear();
+                 const currentMonth = new Date().getMonth() + 1;
+                 const currentDay = new Date().getDate();
+                 let ageYear = currentYear - parseInt(this.birthdate.year);
+                 let ageMonth = currentMonth - parseInt(this.birthdate.month);
+                 let ageDay = currentDay - parseInt(this.birthdate.day);
+
+                 if (ageDay < 0) {
+                     // @TODO: reset day to last day of the previous month. If possible
+                     ageMonth--;
+                     const daysInLastMonth = new Date(
+                         currentYear,
+                         currentMonth - 1,
+                         0
+                     ).getDate();
+                     ageDay += daysInLastMonth;
+                 }
+
+                 if (ageMonth < 0) {
+                     // @TODO: Months needs to behave properly - make it so it's not possible to go above 12 or under 1
+                     ageYear--;
+                     ageMonth += 12;
+                 }
+
+                 this.age.year = ageYear;
+                 this.age.month = ageMonth;
+                 this.age.day = ageDay;
+             } else {
+                 this.age = { year: "--", month: "--", day: "--" };
+             }
+         },
+     },
+     computed: {
+         birthdateError() {
+             const errors = {};
+             const { day, month, year } = this.birthdate;
+             if (day && month && year) {
+                 const maxDay = new Date(year, month, 0).getDate();
+                 if (day < 1 || day > maxDay) {
+                     errors.day = "Invalid day for the selected month/year";
+                 }
+                 const birthdate = new Date(year, month - 1, day);
+                 const today = new Date();
+                 if (birthdate > today) {
+                     errors.future = "Birthdate cannot be in the future";
+                 }
+             }
+             return errors;
+         },
+     },
+     watch: {
+         "birthdate.year"(newYear) {
+             if (newYear > this.currentYear) {
+                 this.birthdate.year = this.currentYear;
+             }
+         },
+     },
+ };
 </script>
 
 <style scoped>
@@ -263,6 +269,12 @@ export default {
   height: 64px;
   width: auto;
 }
+
+ .circle {
+     background-color: #854DFF;
+     height: 96px;
+     width: 96px;
+ }
 
 @media (min-width: 768px) {
   .form__label {
