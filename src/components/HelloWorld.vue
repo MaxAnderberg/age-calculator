@@ -42,8 +42,8 @@
     </section>
     <section>
       <div class="test-container">
-          <hr class="custom-line" />
-          <img alt="Vue logo" class="logo" src="@/assets/logo.png" width="64" height="64" />
+        <hr class="custom-line" />
+        <img alt="Vue logo" class="logo" src="@/assets/logo.png" width="64" height="64" />
       </div>
     </section>
     <section class="age">
@@ -64,7 +64,6 @@
 </template>
 
 <script>
-
 export default {
   name: "HelloWorld",
   props: {
@@ -101,7 +100,7 @@ export default {
         let ageDay = currentDay - parseInt(this.birthdate.day);
 
         if (ageDay < 0) {
-            // @TODO: reset day to last day of the previous month. If possible
+          // @TODO: reset day to last day of the previous month. If possible
           ageMonth--;
           const daysInLastMonth = new Date(
             currentYear,
@@ -112,7 +111,7 @@ export default {
         }
 
         if (ageMonth < 0) {
-            // @TODO: Months needs to behave properly - make it so it's not possible to go above 12 or under 1
+          // @TODO: Months needs to behave properly - make it so it's not possible to go above 12 or under 1
           ageYear--;
           ageMonth += 12;
         }
@@ -241,29 +240,29 @@ export default {
   border-color: red;
 }
 
- .test-container {
-     position: relative;
-     height: 64px; /* Match the logo's height */
-     overflow: hidden; /* In case any child elements exceed the container's bounds */
- }
+.test-container {
+  position: relative;
+  height: 64px; /* Match the logo's height */
+  overflow: hidden; /* In case any child elements exceed the container's bounds */
+}
 
- .custom-line {
-     position: relative;
-     z-index: 1;
-     margin: 32px 0; /* This centers the line within the 64px container */
-     border: none; /* Remove the default border */
-     border-top: 1px solid black; /* Set a single top border to emulate the HR */
- }
+.custom-line {
+  position: relative;
+  z-index: 1;
+  margin: 32px 0; /* This centers the line within the 64px container */
+  border: none; /* Remove the default border */
+  border-top: 1px solid black; /* Set a single top border to emulate the HR */
+}
 
- .logo {
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-     z-index: 2;
-     height: 64px;
-     width: auto;
- }
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  height: 64px;
+  width: auto;
+}
 
 /* Styles for tablets and up */
 @media (min-width: 768px) {
@@ -285,8 +284,8 @@ export default {
   .age__unit {
     font-size: 104px;
   }
-.logo {
+  .logo {
     left: 97%;
- }
+  }
 }
 </style>
