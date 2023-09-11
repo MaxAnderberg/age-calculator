@@ -271,9 +271,20 @@
 }
 
  .circle {
+     position: absolute;  /* Added */
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     z-index: 2;  /* Adjusted */
      background-color: #854DFF;
      height: 96px;
      width: 96px;
+     border-radius: 50%;  /* Added */
+ }
+
+ .circle:hover {
+     background-color: black;
+     cursor: pointer;
  }
 
 @media (min-width: 768px) {
