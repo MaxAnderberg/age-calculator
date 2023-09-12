@@ -173,6 +173,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+    height: 342px;
 }
 
 .age__item {
@@ -184,6 +185,7 @@
   letter-spacing: -1.12px;
   display: flex;
   gap: 8px;
+    margin-bottom: 34px;
 }
 
 .age__number {
@@ -246,19 +248,20 @@
   border-color: red;
 }
 
-.test-container {
-  position: relative;
-  height: 96px; /* Match the logo's height */
-  overflow: hidden; /* In case any child elements exceed the container's bounds */
-}
+ .test-container {
+     position: relative;
+     height: 96px; /* Match the logo's height */
+     overflow: hidden; /* In case any child elements exceed the container's bounds */
+     margin-bottom: 26px;
+ }
 
-.custom-line {
-  position: relative;
-  z-index: 1;
-  margin: 32px 0; /* This centers the line within the 64px container */
-  border: none; /* Remove the default border */
-  border-top: 1px solid black; /* Set a single top border to emulate the HR */
-}
+ .custom-line {
+     position: relative;
+     z-index: 1;
+     margin: 32px 0; /* This centers the line within the 64px container */
+     border: none; /* Remove the default border */
+     border-top: 1px solid black; /* Set a single top border to emulate the HR */
+ }
 
  .logo {
      position: absolute;
