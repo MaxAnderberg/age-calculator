@@ -248,7 +248,7 @@
 
 .test-container {
   position: relative;
-  height: 64px; /* Match the logo's height */
+  height: 96px; /* Match the logo's height */
   overflow: hidden; /* In case any child elements exceed the container's bounds */
 }
 
