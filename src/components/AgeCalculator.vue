@@ -260,26 +260,26 @@
   border-top: 1px solid black; /* Set a single top border to emulate the HR */
 }
 
-.logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  height: 64px;
-  width: auto;
-}
-
- .circle {
-     position: absolute;  /* Added */
+ .logo {
+     position: absolute;
      top: 50%;
      left: 50%;
      transform: translate(-50%, -50%);
-     z-index: 2;  /* Adjusted */
+     z-index: 3;  /* Ensure logo is on top of circle */
+     height: 64px;
+     width: auto;
+ }
+
+ .circle {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     z-index: 2;
      background-color: #854DFF;
      height: 96px;
      width: 96px;
-     border-radius: 50%;  /* Added */
+     border-radius: 50%;
  }
 
  .circle:hover {
@@ -305,9 +305,6 @@
   }
   .age__unit {
     font-size: 104px;
-  }
-  .logo {
-    left: 97%;
   }
 }
 </style>
