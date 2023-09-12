@@ -154,6 +154,10 @@
                  this.birthdate.year = this.currentYear;
              }
          },
+         "birthdate.month"(newMonth) {
+             if (newMonth < 1) this.birthdate.month = 1;
+             if (newMonth > 12) this.birthdate.month = 12;
+         },
      },
  };
 </script>
