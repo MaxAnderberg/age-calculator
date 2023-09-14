@@ -12,6 +12,8 @@
             v-model="birthdate.day"
             @input="calculateAge"
             placeholder="24"
+            min="1"
+            max="31"
           />
         </div>
         <div class="form__group">
@@ -24,6 +26,8 @@
             v-model="birthdate.month"
             @input="calculateAge"
             placeholder="09"
+            min="1"
+            max="12"
           />
         </div>
         <div class="form__group">
