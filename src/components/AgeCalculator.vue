@@ -266,7 +266,7 @@ export default {
 .circle {
     position: absolute;
     top: 50%;
-    left: 93.35%;
+    left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
     background-color: #854DFF;
@@ -304,6 +304,9 @@ export default {
 
     .age__unit {
         font-size: 104px;
+    }
+    .circle {
+    left: 93.35%;
     }
 }
 </style>
