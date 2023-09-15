@@ -101,6 +101,15 @@ export default {
                     ageMonth += 12;
                 }
 
+                const maxDay = new Date(this.birthdate.year, this.birthdate.month, 0).getDate();
+
+                // Correct the day if it's invalid
+                if (this.birthdate.day < 1) {
+                    this.birthdate.day = 1;
+                } else if (this.birthdate.day > maxDay) {
+                    this.birthdate.day = maxDay;
+                }
+
                 this.age.year = ageYear;
                 this.age.month = ageMonth;
                 this.age.day = ageDay;
@@ -305,8 +314,9 @@ export default {
     .age__unit {
         font-size: 104px;
     }
+
     .circle {
-    left: 93.35%;
+        left: 93.35%;
     }
 }
 </style>
