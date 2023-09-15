@@ -175,6 +175,7 @@
   padding: 48px 24px;
   overflow: hidden;
   margin-top: 88px;
+
 }
 
 .age {
@@ -284,7 +285,7 @@
  .circle {
      position: absolute;
      top: 50%;
-     left: 50%;
+     left: 96%;
      transform: translate(-50%, -50%);
      z-index: 2;
      background-color: #854DFF;
@@ -310,6 +311,7 @@
   }
   .main-age_card {
     padding: 56px;
+      max-width: 840px;
   }
   .age__number {
     font-size: 104px;
