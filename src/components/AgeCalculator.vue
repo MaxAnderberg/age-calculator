@@ -244,7 +244,7 @@ export default {
 .custom-line {
     position: relative;
     z-index: 1;
-    margin: 32px 0;
+    margin: 50px 0;
     /* This centers the line within the 64px container */
     border: none;
     /* Remove the default border */
@@ -266,7 +266,7 @@ export default {
 .circle {
     position: absolute;
     top: 50%;
-    left: 96%;
+    left: 93.35%;
     transform: translate(-50%, -50%);
     z-index: 2;
     background-color: #854DFF;
