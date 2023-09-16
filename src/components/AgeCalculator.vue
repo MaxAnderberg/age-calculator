@@ -229,6 +229,21 @@ export default {
     border-color: #dcdcdc;
 }
 
+/* Remove spin button */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Safari, just in case */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
 .form__input:hover {
     border-color: #854dff;
     cursor: pointer;
