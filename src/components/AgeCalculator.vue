@@ -46,8 +46,6 @@
 
 <script>
 
-
-
 export default {
     name: "AgeCalculator",
     props: {
