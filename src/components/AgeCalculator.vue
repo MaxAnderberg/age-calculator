@@ -159,7 +159,6 @@ export default {
     padding: 48px 24px;
     overflow: hidden;
     margin-top: 88px;
-
 }
 
 .age {
@@ -305,6 +304,7 @@ export default {
     .main-age_card {
         padding: 56px;
         max-width: 840px;
+        margin: auto;
     }
 
     .age__number {
