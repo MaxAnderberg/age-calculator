@@ -232,15 +232,15 @@ export default {
 /* Remove spin button */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* For Safari, just in case */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 
@@ -308,6 +308,13 @@ input[type="number"]::-webkit-outer-spin-button {
 
     .form {
         justify-content: flex-start;
+        width: 100%;
+    }
+
+    .form__container {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
     }
 
     .form__input {
