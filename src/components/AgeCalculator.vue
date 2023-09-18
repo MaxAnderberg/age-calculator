@@ -175,7 +175,7 @@ export default {
     letter-spacing: -1.12px;
     display: flex;
     gap: 8px;
-    margin-bottom: 34px;
+    margin-bottom: 55px;
 }
 
 .age__number {
