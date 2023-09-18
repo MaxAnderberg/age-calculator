@@ -226,7 +226,9 @@ export default {
     letter-spacing: 0.2px;
     width: 100%;
     padding: 16px;
-    border-color: #dcdcdc;
+    border: solid 1px #dcdcdc;
+    outline: none;
+    box-shadow: none;
 }
 
 /* Remove spin button */
