@@ -336,7 +336,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 
     .circle {
-        left: 93.35%;
+        left: 94.30%;
     }
 }
 </style>
