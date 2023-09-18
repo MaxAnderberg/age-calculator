@@ -318,7 +318,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 
     .form__input {
-        max-width: 160px;
+        width: 160px;
     }
 
     .main-age_card {
