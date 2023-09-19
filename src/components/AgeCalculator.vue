@@ -229,6 +229,7 @@ export default {
     border: solid 1px #dcdcdc;
     outline: none;
     box-shadow: none;
+    width: 60px;
 }
 
 /* Remove spin button */
