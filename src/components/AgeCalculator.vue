@@ -5,7 +5,9 @@
                 <div class="form__group">
                     <label class="form__label">day</label>
                     <input class="form__input" :class="{ 'form__input--error': birthdateError.day }" type="number" name
-                        v-model="birthdate.day" @input="calculateAge" placeholder="24" min="1" max="31" />
+                        v-model="birthdate.day" @input="() => { calculateAge(); validateDay(); }" placeholder="24" min="1"
+                        max="31" />
+                    <p v-if="errors.day" class="error-message">Invalid day</p>
                 </div>
                 <div class="form__group">
                     <label class="form__label">month</label>
@@ -65,6 +67,11 @@ export default {
                 year: 32,
             },
             currentYear: new Date().getFullYear(),
+            errors: {
+                day: false,
+                month: false,
+                year: false,
+            }
         };
     },
     methods: {
@@ -115,8 +122,17 @@ export default {
                 this.age = { year: "--", month: "--", day: "--" };
             }
         },
+        validateDay() {
+            const { day, month, year } = this.birthdate;
+            const maxDay = new Date(year, month, 0).getDate();
+            if (day < 1 || day > maxDay) {
+                this.errors.day = true;
+            } else {
+                this.errors.day = false;
+            }
+        },
     },
-    computed: {
+    Computed: {
         birthdateError() {
             const errors = {};
             const { day, month, year } = this.birthdate;
