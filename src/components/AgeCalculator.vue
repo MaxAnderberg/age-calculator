@@ -219,7 +219,7 @@ export default {
 .form__input {
     border-radius: 8px;
     font-family: Poppins;
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -229,7 +229,7 @@ export default {
     border: solid 1px #dcdcdc;
     outline: none;
     box-shadow: none;
-    width: 60px;
+    width: 50px;
 }
 
 /* Remove spin button */
