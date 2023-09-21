@@ -132,22 +132,26 @@ export default {
             }
         },
     },
-    Computed: {
+    computed: {
         birthdateError() {
-            const errors = {};
-            const { day, month, year } = this.birthdate;
-            if (day && month && year) {
-                const maxDay = new Date(year, month, 0).getDate();
-                if (day < 1 || day > maxDay) {
-                    errors.day = "Invalid day for the selected month/year";
-                }
-                const birthdate = new Date(year, month - 1, day);
-                const today = new Date();
-                if (birthdate > today) {
-                    errors.future = "Birthdate cannot be in the future";
-                }
+            const errors = {
+            day: false,
+            month: false,
+            year: false,
+        };
+        const { day, month, year } = this.birthdate;
+        if (day && month && year) {
+            const maxDay = new Date(year, month, 0).getDate();
+            if (day < 1 || day > maxDay) {
+                errors.day = true;
             }
-            return errors;
+            const birthdate = new Date(year, month - 1, day);
+            const today = new Date();
+            if (birthdate > today) {
+                errors.future = true;
+            }
+        }
+        return errors;
         },
     },
     watch: {
