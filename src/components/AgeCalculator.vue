@@ -106,15 +106,6 @@ export default {
                     ageMonth += 12;
                 }
 
-                const maxDay = new Date(this.birthdate.year, this.birthdate.month, 0).getDate();
-
-                // Correct the day if it's invalid
-                if (this.birthdate.day < 1) {
-                    this.birthdate.day = 1;
-                } else if (this.birthdate.day > maxDay) {
-                    this.birthdate.day = maxDay;
-                }
-
                 this.age.year = ageYear;
                 this.age.month = ageMonth;
                 this.age.day = ageDay;
@@ -152,17 +143,6 @@ export default {
             }
         }
         return errors;
-        },
-    },
-    watch: {
-        "birthdate.year"(newYear) {
-            if (newYear > this.currentYear) {
-                this.birthdate.year = this.currentYear;
-            }
-        },
-        "birthdate.month"(newMonth) {
-            if (newMonth < 1) this.birthdate.month = 1;
-            if (newMonth > 12) this.birthdate.month = 12;
         },
     },
 };
