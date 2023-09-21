@@ -12,12 +12,16 @@
                 <div class="form__group">
                     <label class="form__label">month</label>
                     <input class="form__input" :class="{ 'form__input--error': birthdateError.month }" type="number" name
-                        v-model="birthdate.month" @input="calculateAge" placeholder="09" min="1" max="12" />
+                        v-model="birthdate.month" @input="() => { calculateAge(); validateMonth(); }" placeholder="09" min="1"
+                        max="12" />
+                    <p v-if="errors.month" class="error-message">Invalid month</p>
                 </div>
                 <div class="form__group">
                     <label class="form__label">year</label>
                     <input v-model="birthdate.year" :class="{ 'form__input--error': birthdateError.year }"
-                        @input="calculateAge" class="form__input" type="number" name placeholder="1984" />
+                        @input="() => { calculateAge(); validateYear(); }" class="form__input" type="number" name
+                        placeholder="1984" />
+                    <p v-if="errors.year" class="error-message">Invalid year</p>
                 </div>
             </form>
         </section>
@@ -122,27 +126,55 @@ export default {
                 this.errors.day = false;
             }
         },
+        validateMonth() {
+            const { month } = this.birthdate;
+            if (month < 1 || month > 12) {
+                this.errors.month = true;
+            } else {
+                this.errors.month = false;
+            }
+        },
+        validateYear() {
+            const { year } = this.birthdate;
+            if (year < 1 || year > this.currentYear) {
+                this.errors.year = true;
+            } else {
+                this.errors.year = false;
+            }
+        },
     },
     computed: {
         birthdateError() {
             const errors = {
-            day: false,
-            month: false,
-            year: false,
-        };
-        const { day, month, year } = this.birthdate;
-        if (day && month && year) {
-            const maxDay = new Date(year, month, 0).getDate();
-            if (day < 1 || day > maxDay) {
-                errors.day = true;
+                day: false,
+                month: false,
+                year: false,
+            };
+            const { day, month, year } = this.birthdate;
+
+            // day validation
+            if (day && month && year) {
+                const maxDay = new Date(year, month, 0).getDate();
+                if (day < 1 || day > maxDay) {
+                    errors.day = true;
+                }
+                const birthdate = new Date(year, month - 1, day);
+                const today = new Date();
+                if (birthdate > today) {
+                    errors.future = true;
+                }
             }
-            const birthdate = new Date(year, month - 1, day);
-            const today = new Date();
-            if (birthdate > today) {
-                errors.future = true;
+
+            // Month validation
+            if (month < 1 || month > 12) {
+                errors.month = true;
             }
-        }
-        return errors;
+
+            // Year validation
+            if (year < 1 || year > this.currentYear) {
+                errors.year = true;
+            }
+            return errors;
         },
     },
 };
