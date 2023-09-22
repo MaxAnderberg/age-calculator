@@ -304,6 +304,7 @@ input[type="number"]::-webkit-outer-spin-button {
     /* Match the logo's height */
     overflow: hidden;
     /* In case any child elements exceed the container's bounds */
+    margin-top: 20px;
     margin-bottom: 26px;
 }
 
