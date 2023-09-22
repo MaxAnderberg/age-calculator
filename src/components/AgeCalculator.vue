@@ -246,6 +246,7 @@ export default {
     text-align: left;
     color: #716f6f;
     font-family: poppins;
+    margin-bottom: 8px;
 }
 
 .form__input {
