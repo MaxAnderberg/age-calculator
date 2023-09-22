@@ -12,8 +12,8 @@
                 <div class="form__group">
                     <label class="form__label">month</label>
                     <input class="form__input" :class="{ 'form__input--error': birthdateError.month }" type="number" name
-                        v-model="birthdate.month" @input="() => { calculateAge(); validateMonth(); }" placeholder="09" min="1"
-                        max="12" />
+                        v-model="birthdate.month" @input="() => { calculateAge(); validateMonth(); }" placeholder="09"
+                        min="1" max="12" />
                     <p v-if="errors.month" class="error-message">Invalid month</p>
                 </div>
                 <div class="form__group">
