@@ -288,6 +288,13 @@ input[type="number"]::-webkit-outer-spin-button {
     border-color: red;
 }
 
+.error-message {
+    font-style: italic;
+    font-family: poppins;
+    font-size: 14px;
+    color: red;
+}
+
 .test-container {
     position: relative;
     height: 96px;
