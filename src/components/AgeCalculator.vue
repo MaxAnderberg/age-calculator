@@ -294,6 +294,8 @@ input[type="number"]::-webkit-outer-spin-button {
     font-family: poppins;
     font-size: 14px;
     color: red;
+    margin-top: 95px;
+    position: absolute;
 }
 
 .test-container {
