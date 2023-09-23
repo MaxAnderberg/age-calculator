@@ -79,7 +79,19 @@ export default {
         };
     },
     methods: {
+        validateInput() {
+            this.validateDay();
+            this.validateMonth();
+            this.validateYear();
+        },
         calculateAge() {
+            this.validateInput();
+
+            if (this.errors.day || this.errors.month || this.errors.year) {
+                this.age = { year: "--", month: "--", day: "--" };
+                return;
+            }
+
             if (
                 this.birthdate &&
                 this.birthdate.year &&
