@@ -200,7 +200,6 @@ export default {
     border-radius: 24px 24px 100px 24px;
     padding: 48px 24px;
     overflow: hidden;
-    margin-top: 88px;
 }
 
 .age {
@@ -388,6 +387,7 @@ input[type="number"]::-webkit-outer-spin-button {
         padding: 56px;
         max-width: 840px;
         margin: auto;
+        margin-top: 88px;
     }
 
     .age__number {
