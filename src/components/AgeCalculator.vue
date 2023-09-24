@@ -206,7 +206,6 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 342px;
 }
 
 .age__item {
@@ -234,7 +233,6 @@ export default {
     display: flex;
     width: 100%;
     justify-content: center;
-    margin-bottom: 32px;
 }
 
 .form__container {
@@ -315,7 +313,7 @@ input[type="number"]::-webkit-outer-spin-button {
     overflow: hidden;
     /* In case any child elements exceed the container's bounds */
     margin-top: 20px;
-    margin-bottom: 26px;
+    margin-bottom: 10px;
 }
 
 .custom-line {
@@ -371,6 +369,7 @@ input[type="number"]::-webkit-outer-spin-button {
     .form {
         justify-content: flex-start;
         width: 100%;
+        margin-bottom: 32px;
     }
 
     .form__container {
