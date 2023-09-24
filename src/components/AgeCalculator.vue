@@ -218,7 +218,6 @@ export default {
     letter-spacing: -1.12px;
     display: flex;
     gap: 8px;
-    margin-bottom: 55px;
 }
 
 .age__number {
@@ -400,6 +399,10 @@ input[type="number"]::-webkit-outer-spin-button {
 
     .circle {
         left: 94.30%;
+    }
+
+    .age__item {
+        margin-bottom: 55px;
     }
 }
 </style>
