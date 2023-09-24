@@ -369,7 +369,6 @@ input[type="number"]::-webkit-outer-spin-button {
     .form {
         justify-content: flex-start;
         width: 100%;
-        margin-bottom: 32px;
     }
 
     .form__container {
@@ -412,6 +411,11 @@ input[type="number"]::-webkit-outer-spin-button {
 
     .logo {
         height: 64px;
+    }
+
+    .test-container {
+        margin-bottom: 20px;
+        margin-top: 25px;
     }
 }
 </style>
