@@ -336,7 +336,8 @@ input[type="number"]::-webkit-outer-spin-button {
     transform: translate(-50%, -50%);
     z-index: 3;
     /* Ensure logo is on top of circle */
-    height: 64px;
+    height: 24px;
+    /* add width and stuff here */
     width: auto;
 }
 
@@ -347,8 +348,8 @@ input[type="number"]::-webkit-outer-spin-button {
     transform: translate(-50%, -50%);
     z-index: 2;
     background-color: #854DFF;
-    height: 96px;
-    width: 96px;
+    height: 64px;
+    width: 64px;
     border-radius: 50%;
 }
 
@@ -403,6 +404,15 @@ input[type="number"]::-webkit-outer-spin-button {
 
     .age__item {
         margin-bottom: 55px;
+    }
+
+    .circle {
+        height: 96px;
+        width: 96px;
+    }
+
+    .logo {
+        height: 64px;
     }
 }
 </style>
