@@ -398,15 +398,12 @@ input[type="number"]::-webkit-outer-spin-button {
 
     .circle {
         left: 94.30%;
+        height: 96px;
+        width: 96px;
     }
 
     .age__item {
         margin-bottom: 55px;
-    }
-
-    .circle {
-        height: 96px;
-        width: 96px;
     }
 
     .logo {
