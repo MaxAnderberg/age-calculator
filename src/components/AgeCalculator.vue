@@ -325,7 +325,7 @@ input[type="number"]::-webkit-outer-spin-button {
     /* This centers the line within the 64px container */
     border: none;
     /* Remove the default border */
-    border-top: 1px solid black;
+    border-top: 1px solid #DCDCDC;
     /* Set a single top border to emulate the HR */
 }
 
