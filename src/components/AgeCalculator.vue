@@ -307,11 +307,11 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .test-container {
-    /* Match the logo's height */
-    height: 96px;
     display: flex;
-    align-items: center; /* To vertically center the circle with the line */
-    position: relative; /* To position circle relatively inside this container */
+    justify-content: center;  
+    align-items: center;      
+    position: relative;
+    height: 96px;
     margin-bottom: 20px;
     margin-top: 20px;
 }
@@ -333,9 +333,9 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .circle {
+    left: 50%;
     position: absolute;
-    margin-left: 28%;
-    transform: translateX(50%);
+    transform: translateX(-50%);
     z-index: 2;
     background-color: #854DFF;
     height: 64px;
@@ -391,6 +391,8 @@ input[type="number"]::-webkit-outer-spin-button {
     .circle {
         height: 96px;
         width: 96px;
+        margin-right: 0;
+        background-color: red;
     }
 
     .age__item {
