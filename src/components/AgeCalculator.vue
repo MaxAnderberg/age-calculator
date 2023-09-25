@@ -1,7 +1,7 @@
 <template>
     <main class="main-age_card">
         <section class="form">
-            <form class="form__container" method id action>
+            <form class="form__container">
                 <div class="form__group">
                     <label :class="{ 'error-label': errors.day }" class="form__label">day</label>
                     <input class="form__input" :class="{ 'form__input--error': birthdateError.day }" type="number" name
