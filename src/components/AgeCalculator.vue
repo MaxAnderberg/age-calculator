@@ -391,6 +391,9 @@ input[type="number"]::-webkit-outer-spin-button {
     .circle {
         height: 96px;
         width: 96px;
+        transform: translateX(0%);
+        left: auto;
+        right: 0;
     }
 
     .age__item {
