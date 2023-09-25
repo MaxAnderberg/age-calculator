@@ -307,24 +307,17 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .test-container {
-    position: relative;
-    height: 96px;
     /* Match the logo's height */
-    overflow: hidden;
-    /* In case any child elements exceed the container's bounds */
+    height: 96px;
+    display: flex;
+    align-items: center; /* To vertically center the circle with the line */
+    position: relative; /* To position circle relatively inside this container */
+    margin-bottom: 20px;
     margin-top: 20px;
-    margin-bottom: 10px;
 }
 
 .custom-line {
-    position: relative;
-    z-index: 1;
-    margin: 50px 0;
-    /* This centers the line within the 64px container */
-    border: none;
-    /* Remove the default border */
-    border-top: 1px solid #DCDCDC;
-    /* Set a single top border to emulate the HR */
+    flex-grow: 1; /* Makes the hr take up all available space */
 }
 
 .logo {
@@ -341,9 +334,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .circle {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-left: 28%;
+    transform: translateX(50%);
     z-index: 2;
     background-color: #854DFF;
     height: 64px;
@@ -397,7 +389,6 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 
     .circle {
-        left: 94.30%;
         height: 96px;
         width: 96px;
     }
@@ -408,6 +399,8 @@ input[type="number"]::-webkit-outer-spin-button {
 
     .logo {
         height: 64px;
+        display: block;
+        margin: auto;
     }
 
     .test-container {
