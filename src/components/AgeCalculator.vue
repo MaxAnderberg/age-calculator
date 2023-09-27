@@ -373,7 +373,7 @@ input[type="number"]::-webkit-outer-spin-button {
         width: 160px;
     }
 
-    .main-age_card {
+    .main-content {
         padding: 56px;
         max-width: 840px;
         margin: auto;
