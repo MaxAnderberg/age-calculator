@@ -54,9 +54,6 @@
 
 export default {
     name: "AgeCalculator",
-    props: {
-        msg: String,
-    },
     data() {
         return {
             logoSrc: require("@/assets/icon-arrow.svg"),
