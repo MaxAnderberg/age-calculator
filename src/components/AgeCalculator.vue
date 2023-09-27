@@ -29,7 +29,7 @@
             <div class="test-container">
                 <hr class="custom-line" />
                 <div class="circle">
-                    <img alt="Vue logo" class="logo" src="@/assets/icon-arrow.svg" width="64" height="64" />
+                    <img alt="An arrow pointing down" class="logo" src="@/assets/icon-arrow.svg" width="64" height="64" />
                 </div>
             </div>
         </section>
