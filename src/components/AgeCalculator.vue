@@ -56,7 +56,6 @@ export default {
     name: "AgeCalculator",
     data() {
         return {
-            logoSrc: require("@/assets/icon-arrow.svg"),
             birthdate: {
                 day: 1,
                 month: 11,
