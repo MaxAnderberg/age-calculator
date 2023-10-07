@@ -5,21 +5,21 @@
                 <div class="form__group">
                     <label for="day" :class="{ 'form__label--error': errors.day }" class="form__label">day</label>
                     <input id="day" class="form__input" :class="{ 'form__input--error': birthdateError.day }" type="number" name="day"
-                        v-model="birthdate.day" @input="() => { calculateAge(); validateDay(); }" placeholder="24" min="1"
+                        v-model="birthdate.day" @input="handleInputChange('day')" placeholder="24" min="1"
                         max="31" />
                     <p v-if="errors.day" class="error-message">Invalid day</p>
                 </div>
                 <div class="form__group">
                     <label for="month" :class="{ 'form__label--error': errors.month }" class="form__label">month</label>
                     <input id="month" class="form__input" :class="{ 'form__input--error': birthdateError.month }" type="number" name="month"
-                        v-model="birthdate.month" @input="() => { calculateAge(); validateMonth(); }" placeholder="09"
+                        v-model="birthdate.month" @input="handleInputChange('month')" placeholder="09"
                         min="1" max="12" />
                     <p v-if="errors.month" class="error-message">Invalid month</p>
                 </div>
                 <div class="form__group">
                     <label for="year" :class="{ 'form__label--error': errors.year }" class="form__label">year</label>
                     <input id="year" v-model="birthdate.year" :class="{ 'form__input--error': birthdateError.year }"
-                        @input="() => { calculateAge(); validateYear(); }" class="form__input" type="number" name="year"
+                        @input="handleInputChange('year')" class="form__input" type="number" name="year"
                         placeholder="1984" />
                     <p v-if="errors.year" class="error-message">Invalid year</p>
                 </div>
@@ -150,6 +150,16 @@ export default {
                 this.errors.year = false;
             }
         },
+        handleInputChange(type) {
+            this.calculateAge()
+            if (type === "day") {
+                this.validateDay()
+            } else if (type === "month") {
+                this.validateMonth()
+            } else if (type === "year") {
+                this.validateYear()
+            }
+        }
     },
     computed: {
         birthdateError() {
