@@ -129,26 +129,23 @@ export default {
             const { day, month, year } = this.birthdate;
             const maxDay = new Date(year, month, 0).getDate();
             if (day < 1 || day > maxDay) {
-                this.errors.day = true;
-            } else {
-                this.errors.day = false;
+                return this.errors.day = true;
             }
+            return this.errors.day = false;
         },
         validateMonth() {
             const { month } = this.birthdate;
             if (month < 1 || month > 12) {
-                this.errors.month = true;
-            } else {
-                this.errors.month = false;
+                return this.errors.month = true;
             }
+            return this.errors.month = false;
         },
         validateYear() {
             const { year } = this.birthdate;
             if (year < 1 || year > this.currentYear) {
-                this.errors.year = true;
-            } else {
-                this.errors.year = false;
+                return this.errors.year = true;
             }
+            return this.errors.year = false;
         },
         handleInputChange(type) {
             this.calculateAge()
