@@ -16,7 +16,7 @@
             type="number"
             name="day"
             v-model="birthdate.day"
-            @input="handleInputChange('day')"
+            @input="handleInputChange()"
             placeholder="24"
             min="1"
             max="31"
@@ -37,7 +37,7 @@
             type="number"
             name="month"
             v-model="birthdate.month"
-            @input="handleInputChange('month')"
+            @input="handleInputChange()"
             placeholder="09"
             min="1"
             max="12"
@@ -55,7 +55,7 @@
             id="year"
             v-model="birthdate.year"
             :class="{ 'form__input--error': birthdateError.year }"
-            @input="handleInputChange('year')"
+            @input="handleInputChange()"
             class="form__input"
             type="number"
             name="year"
@@ -185,15 +185,8 @@ export default {
       }
       return (this.birthdateError.year = false);
     },
-    handleInputChange(type) {
+    handleInputChange() {
       this.calculateAge();
-      if (type === "day") {
-        this.validateDay();
-      } else if (type === "month") {
-        this.validateMonth();
-      } else if (type === "year") {
-        this.validateYear();
-      }
     },
   },
   computed: {
