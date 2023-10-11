@@ -5,7 +5,7 @@
         <div class="form__group">
           <label
             for="day"
-            :class="{ 'form__label--error': errors.day }"
+            :class="{ 'form__label--error': birthdateError.day }"
             class="form__label"
             >day</label
           >
@@ -21,12 +21,12 @@
             min="1"
             max="31"
           />
-          <p v-if="errors.day" class="error-message">Invalid day</p>
+          <p v-if="birthdateError.day" class="error-message">Invalid day</p>
         </div>
         <div class="form__group">
           <label
             for="month"
-            :class="{ 'form__label--error': errors.month }"
+            :class="{ 'form__label--error': birthdateError.month }"
             class="form__label"
             >month</label
           >
@@ -42,12 +42,12 @@
             min="1"
             max="12"
           />
-          <p v-if="errors.month" class="error-message">Invalid month</p>
+          <p v-if="birthdateError.month" class="error-message">Invalid month</p>
         </div>
         <div class="form__group">
           <label
             for="year"
-            :class="{ 'form__label--error': errors.year }"
+            :class="{ 'form__label--error': birthdateError.year }"
             class="form__label"
             >year</label
           >
@@ -61,7 +61,7 @@
             name="year"
             placeholder="1984"
           />
-          <p v-if="errors.year" class="error-message">Invalid year</p>
+          <p v-if="birthdateError.year" class="error-message">Invalid year</p>
         </div>
       </form>
     </section>
@@ -112,11 +112,6 @@ export default {
         year: 32,
       },
       currentYear: new Date().getFullYear(),
-      errors: {
-        day: false,
-        month: false,
-        year: false,
-      },
     };
   },
   methods: {
@@ -128,7 +123,7 @@ export default {
     calculateAge() {
       this.validateInput();
 
-      if (this.errors.day || this.errors.month || this.errors.year) {
+      if (this.birthdateError.day || this.birthdateError.month || this.birthdateError.year) {
         this.age = { year: "--", month: "--", day: "--" };
         return;
       }
@@ -174,23 +169,23 @@ export default {
       const { day, month, year } = this.birthdate;
       const maxDay = new Date(year, month, 0).getDate();
       if (day < 1 || day > maxDay) {
-        return (this.errors.day = true);
+        return (this.birthdateError.day = true);
       }
-      return (this.errors.day = false);
+      return (this.birthdateError.day = false);
     },
     validateMonth() {
       const { month } = this.birthdate;
       if (month < 1 || month > 12) {
-        return (this.errors.month = true);
+        return (this.birthdateError.month = true);
       }
-      return (this.errors.month = false);
+      return (this.birthdateError.month = false);
     },
     validateYear() {
       const { year } = this.birthdate;
       if (year < 1 || year > this.currentYear) {
-        return (this.errors.year = true);
+        return (this.birthdateError.year = true);
       }
-      return (this.errors.year = false);
+      return (this.birthdateError.year = false);
     },
     handleInputChange(type) {
       this.calculateAge();
