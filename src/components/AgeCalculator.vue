@@ -159,9 +159,7 @@ export default {
         this.age.year = ageYear;
         this.age.month = ageMonth;
         this.age.day = ageDay;
-      } else {
-        this.age = { year: "--", month: "--", day: "--" };
-      }
+      } 
     },
     validateDay() {
       const { day, month, year } = this.birthdate;
