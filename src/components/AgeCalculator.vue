@@ -123,43 +123,40 @@ export default {
     calculateAge() {
       this.validateInput();
 
-      if (this.birthdateError.day || this.birthdateError.month || this.birthdateError.year) {
+      if (
+        this.birthdateError.day ||
+        this.birthdateError.month ||
+        this.birthdateError.year
+      ) {
         this.age = { year: "--", month: "--", day: "--" };
         return;
       }
 
-      if (
-        this.birthdate &&
-        this.birthdate.year &&
-        this.birthdate.month &&
-        this.birthdate.day
-      ) {
-        const currentYear = new Date().getFullYear();
-        const currentMonth = new Date().getMonth() + 1;
-        const currentDay = new Date().getDate();
-        let ageYear = currentYear - parseInt(this.birthdate.year);
-        let ageMonth = currentMonth - parseInt(this.birthdate.month);
-        let ageDay = currentDay - parseInt(this.birthdate.day);
+      const currentYear = new Date().getFullYear();
+      const currentMonth = new Date().getMonth() + 1;
+      const currentDay = new Date().getDate();
+      let ageYear = currentYear - parseInt(this.birthdate.year);
+      let ageMonth = currentMonth - parseInt(this.birthdate.month);
+      let ageDay = currentDay - parseInt(this.birthdate.day);
 
-        if (ageDay < 0) {
-          ageMonth--;
-          const daysInLastMonth = new Date(
-            currentYear,
-            currentMonth - 1,
-            0
-          ).getDate();
-          ageDay += daysInLastMonth;
-        }
+      if (ageDay < 0) {
+        ageMonth--;
+        const daysInLastMonth = new Date(
+          currentYear,
+          currentMonth - 1,
+          0
+        ).getDate();
+        ageDay += daysInLastMonth;
+      }
 
-        if (ageMonth < 0) {
-          ageYear--;
-          ageMonth += 12;
-        }
+      if (ageMonth < 0) {
+        ageYear--;
+        ageMonth += 12;
+      }
 
-        this.age.year = ageYear;
-        this.age.month = ageMonth;
-        this.age.day = ageDay;
-      } 
+      this.age.year = ageYear;
+      this.age.month = ageMonth;
+      this.age.day = ageDay;
     },
     validateDay() {
       const { day, month, year } = this.birthdate;
