@@ -142,9 +142,9 @@ export default {
         const currentYear = new Date().getFullYear();
         const currentMonth = new Date().getMonth() + 1;
         const currentDay = new Date().getDate();
-        let ageYear = currentYear - parseInt(this.birthdate.year);
-        let ageMonth = currentMonth - parseInt(this.birthdate.month);
-        let ageDay = currentDay - parseInt(this.birthdate.day);
+        let ageYear = currentYear - parseInt(this.birthdate.year, 10);
+        let ageMonth = currentMonth - parseInt(this.birthdate.month, 10);
+        let ageDay = currentDay - parseInt(this.birthdate.day, 10);
 
         if (ageDay < 0) {
           // @TODO: reset day to last day of the previous month. If possible
