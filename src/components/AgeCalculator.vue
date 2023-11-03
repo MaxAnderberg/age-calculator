@@ -16,7 +16,7 @@
             type="number"
             name="day"
             v-model="birthdate.day"
-            @input="handleInputChange('day')"
+            @input="handleInputChange()"
             placeholder="24"
             min="1"
             max="31"
@@ -37,7 +37,7 @@
             type="number"
             name="month"
             v-model="birthdate.month"
-            @input="handleInputChange('month')"
+            @input="handleInputChange()"
             placeholder="09"
             min="1"
             max="12"
@@ -55,7 +55,7 @@
             id="year"
             v-model="birthdate.year"
             :class="{ 'form__input--error': birthdateError.year }"
-            @input="handleInputChange('year')"
+            @input="handleInputChange()"
             class="form__input"
             type="number"
             name="year"
@@ -142,9 +142,9 @@ export default {
         const currentYear = new Date().getFullYear();
         const currentMonth = new Date().getMonth() + 1;
         const currentDay = new Date().getDate();
-        let ageYear = currentYear - parseInt(this.birthdate.year, 10);
-        let ageMonth = currentMonth - parseInt(this.birthdate.month, 10);
-        let ageDay = currentDay - parseInt(this.birthdate.day, 10);
+        let ageYear = currentYear - parseInt(this.birthdate.year);
+        let ageMonth = currentMonth - parseInt(this.birthdate.month);
+        let ageDay = currentDay - parseInt(this.birthdate.day);
 
         if (ageDay < 0) {
           // @TODO: reset day to last day of the previous month. If possible
