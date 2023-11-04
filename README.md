@@ -27,7 +27,12 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 
 ### Screenshot
-  TODO: Add screenshots
+
+#### Desktop
+![Alt text](image-1.png)
+
+#### Mobile
+![Alt text](image.png)
 
 ### Links
 
