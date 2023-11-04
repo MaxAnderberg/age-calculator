@@ -40,7 +40,7 @@ To set up the project locally, follow these steps:
 1. Clone the project: `git clone https://github.com/MaxAnderberg/age-calculator`
 2. Navigate into the project directory: `cd age-calculator`
 3. Install dependencies: `npm install`
-4. Start the development server: `npm run dev`
+4. Start the development server: `npm run serve`
 
 ## Author
 - Website - [Max Anderberg](www.github.com/maxanderberg)
