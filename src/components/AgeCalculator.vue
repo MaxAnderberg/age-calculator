@@ -12,7 +12,7 @@
           <input
             id="day"
             class="form__input"
-            :class="{ 'form__input--error': birthdateError.day }"
+            :class="{ 'form__input--error': birthDateError.day }"
             type="number"
             name="day"
             v-model="birthdate.day"
@@ -33,7 +33,7 @@
           <input
             id="month"
             class="form__input"
-            :class="{ 'form__input--error': birthdateError.month }"
+            :class="{ 'form__input--error': birthDateError.month }"
             type="number"
             name="month"
             v-model="birthdate.month"
@@ -54,7 +54,7 @@
           <input
             id="year"
             v-model="birthdate.year"
-            :class="{ 'form__input--error': birthdateError.year }"
+            :class="{ 'form__input--error': birthDateError.year }"
             @input="handleInputChange()"
             class="form__input"
             type="number"
@@ -201,40 +201,6 @@ export default {
       } else if (type === "year") {
         this.validateYear();
       }
-    },
-  },
-  computed: {
-    birthdateError() {
-      const errors = {
-        day: false,
-        month: false,
-        year: false,
-      };
-      const { day, month, year } = this.birthdate;
-
-      // day validation
-      if (day && month && year) {
-        const maxDay = new Date(year, month, 0).getDate();
-        if (day < 1 || day > maxDay) {
-          errors.day = true;
-        }
-        const birthdate = new Date(year, month - 1, day);
-        const today = new Date();
-        if (birthdate > today) {
-          errors.future = true;
-        }
-      }
-
-      // Month validation
-      if (month < 1 || month > 12) {
-        errors.month = true;
-      }
-
-      // Year validation
-      if (year < 1 || year > this.currentYear) {
-        errors.year = true;
-      }
-      return errors;
     },
   },
 };
