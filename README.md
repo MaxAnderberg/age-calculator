@@ -1,7 +1,6 @@
 # Age calculator app
 TODO: Add description.
 
-
 ## Table of contents
 
 - [Overview](#overview)
@@ -13,7 +12,7 @@ TODO: Add description.
 - [Author](#author)
 
 ## Overview
-TODO: Add overview
+This app calculates and displays a person's age in years, months, and days instantly as the user enters their date of birth, with real-time error validation and a user-friendly interface
 
 ### The challenge
 TODO: Add challange
