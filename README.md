@@ -43,4 +43,4 @@ To set up the project locally, follow these steps:
 4. Start the development server: `npm run dev`
 
 ## Author
-- Website - [Max Anderberg](https://maxanderberg.se)
+- Website - [Max Anderberg](www.github.com/maxanderberg)
