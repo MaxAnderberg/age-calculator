@@ -32,7 +32,7 @@ Users should be able to:
 ![Alt text](image-1.png)
 
 #### Mobile
-![Alt text](image.png)
+<img src='./image.png' width='350' />
 
 ### Links
 
