@@ -37,7 +37,7 @@ Users should be able to:
 ### Links
 
 - [Github](https://github.com/MaxAnderberg/age-calculator)
-- [Deployed age calculator](TBA)
+- [Deployed age calculator](https://velvety-figolla-e1a441.netlify.app/)
 
 ## Built with
 
