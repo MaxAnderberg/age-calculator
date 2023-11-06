@@ -158,7 +158,6 @@ export default {
         }
 
         if (ageMonth < 0) {
-          // @TODO: Months needs to behave properly - make it so it's not possible to go above 12 or under 1
           ageYear--;
           ageMonth += 12;
         }
