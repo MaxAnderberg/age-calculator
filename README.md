@@ -29,10 +29,10 @@ Users should be able to:
 ### Screenshot
 
 #### Desktop
-![Alt text](image-1.png)
+![Alt text](desktop.png)
 
 #### Mobile
-<img src='./image.png' width='350' />
+<img src='./mobile.png' width='350' />
 
 ### Links
 
