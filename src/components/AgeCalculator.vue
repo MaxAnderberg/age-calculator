@@ -107,9 +107,9 @@ export default {
         year: 1985,
       },
       age: {
-        day: 1,
-        month: 1,
-        year: 32,
+        day: '--',
+        month: '--',
+        year: '--',
       },
       currentYear: new Date().getFullYear(),
       birthDateError: {
