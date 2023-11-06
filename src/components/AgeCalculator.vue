@@ -224,7 +224,7 @@ export default {
 
 .age__item {
   font-family: Poppins;
-  font-size: 56px;
+  font-size: 53px;
   font-style: italic;
   font-weight: 800;
   line-height: 110%;
