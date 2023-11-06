@@ -17,7 +17,7 @@
             name="day"
             v-model="birthdate.day"
             @input="handleInputChange()"
-            placeholder="24"
+            placeholder="DD"
             min="1"
             max="31"
           />
@@ -38,7 +38,7 @@
             name="month"
             v-model="birthdate.month"
             @input="handleInputChange()"
-            placeholder="09"
+            placeholder="MM"
             min="1"
             max="12"
           />
@@ -59,7 +59,7 @@
             class="form__input"
             type="number"
             name="year"
-            placeholder="1984"
+            placeholder="YYYY"
           />
           <p v-if="birthDateError.year" class="error-message">Invalid year</p>
         </div>
@@ -102,9 +102,9 @@ export default {
   data() {
     return {
       birthdate: {
-        day: 1,
-        month: 11,
-        year: 1985,
+        day: '',
+        month: '',
+        year: '',
       },
       age: {
         day: '--',
