@@ -1,11 +1,9 @@
 # Age calculator app
 This app calculates and displays a person's age in years, months, and days instantly as the user enters their date of birth, with real-time error validation and a user-friendly interface
 
-Experimenting with Vue. Deviated a bit from the input form, added input handlers so the user doesn't have to submit the form every time the user wants to experiment with various ages. 
+Experimenting with Vue. Deviated a bit from the input form, added input handlers so the user doesn't have to submit the form every time the user wants to experiment with various ages. This app only works with AD years.
 
-> Only works with AD years.
-
-Note that it doesn't work with year 0 as there technically isn't a year 0 (went from 1bc to 1d). 
+Note that it doesn't work with year 0 as there technically isn't a year 0 (went from 1 bc to 1 ad). 
 
 ## Table of contents
 
